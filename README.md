@@ -40,6 +40,8 @@ The pipeline architecture consists of the following components:
 5. Transcoding: The SNS event initiates an ECS task, spinning up a Docker container to transcode the video.
    ![image](https://github.com/user-attachments/assets/beea05be-5ac8-4610-a40c-3c1ad2abbf92)
 ---        
+   ![image](https://github.com/user-attachments/assets/19bddada-e7f9-477e-b880-b717485ca403)
+---
 6. Storage: The transcoded videos are automatically uploaded back to the S3 bucket.
    ![image](https://github.com/user-attachments/assets/6f23367e-9ac7-4b5e-a1e0-c3cce40cec15)
 ---
