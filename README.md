@@ -16,9 +16,10 @@ The pipeline architecture consists of the following components:
 * AWS SQS: Receives event notifications from S3 and queues them for processing.
 * AWS ECS: Runs Docker containers that handle the video transcoding process.
 * FFmpeg: The tool used within Docker containers to transcode videos into multiple resolutions.
----
-![diagram-export-8-28-2024-12_23_05-AM](https://github.com/user-attachments/assets/59bdc951-6f6e-4f06-983b-5bc49a09296a)
----
+
+![image](https://github.com/user-attachments/assets/65c2ae74-b140-413c-b15b-660935b80865)
+
+
 
 # Workflow
 ![image](https://github.com/user-attachments/assets/a5b89587-49a4-4926-b4f7-ac65d5336c98)
