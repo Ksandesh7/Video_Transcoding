@@ -27,6 +27,7 @@ The pipeline architecture consists of the following components:
 ---
 
 1. Video Upload: A user uploads a video to an S3 bucket.
+---
    ![image](https://github.com/user-attachments/assets/2e4a239f-9bb3-4c11-8959-39e042aec1e7)
 ---
 3. SQS Event: The S3 bucket triggers an event notification to an SQS queue.
