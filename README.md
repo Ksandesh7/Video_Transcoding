@@ -18,25 +18,25 @@ The pipeline architecture consists of the following components:
 * FFmpeg: The tool used within Docker containers to transcode videos into multiple resolutions.
 
 # Workflow
-* Video Upload: A user uploads a video to an S3 bucket.
-       ![image](https://github.com/user-attachments/assets/a5b89587-49a4-4926-b4f7-ac65d5336c98)
-       ![image](https://github.com/user-attachments/assets/2e4a239f-9bb3-4c11-8959-39e042aec1e7)
+1. Video Upload: A user uploads a video to an S3 bucket.
+   ![image](https://github.com/user-attachments/assets/a5b89587-49a4-4926-b4f7-ac65d5336c98)
+   ![image](https://github.com/user-attachments/assets/2e4a239f-9bb3-4c11-8959-39e042aec1e7)
 
-    2. SQS Event: The S3 bucket triggers an event notification to an SQS queue.
+3. SQS Event: The S3 bucket triggers an event notification to an SQS queue.
+   ![image](https://github.com/user-attachments/assets/f621ffa7-63f3-47ae-852a-772b02f0d475)
        
-    3. Polling: Multiple consumers (Docker containers) poll the SQS queue for new messages
-        
-    3. a) When a message is polled, it becomes invisible to other consumers for 1 minute.
+4. Polling: Multiple consumers (Docker containers) poll the SQS queue for new messages
+    a) When a message is polled, it becomes invisible to other consumers for 1 minute.
         ![image](https://github.com/user-attachments/assets/aad0bea9-da24-4e4f-9a09-cc582a7eef77)
     
-    4. Transcoding: The SNS event initiates an ECS task, spinning up a Docker container to transcode the video.
-        ![image](https://github.com/user-attachments/assets/beea05be-5ac8-4610-a40c-3c1ad2abbf92)
+5. Transcoding: The SNS event initiates an ECS task, spinning up a Docker container to transcode the video.
+   ![image](https://github.com/user-attachments/assets/beea05be-5ac8-4610-a40c-3c1ad2abbf92)
         
-    5. Storage: The transcoded videos are automatically uploaded back to the S3 bucket.
-        ![image](https://github.com/user-attachments/assets/6f23367e-9ac7-4b5e-a1e0-c3cce40cec15)
+6. Storage: The transcoded videos are automatically uploaded back to the S3 bucket.
+   ![image](https://github.com/user-attachments/assets/6f23367e-9ac7-4b5e-a1e0-c3cce40cec15)
 
-    6. Access: The user can download the transcoded videos from the provided links.
-        ![image](https://github.com/user-attachments/assets/05f165ab-d6ad-4c85-a9e1-96ebd57b6c3d)
+7. Access: The user can download the transcoded videos from the provided links.
+   ![image](https://github.com/user-attachments/assets/05f165ab-d6ad-4c85-a9e1-96ebd57b6c3d)
 
 # Tech Stack
 * Amazon S3: Storage for raw and transcoded videos.
