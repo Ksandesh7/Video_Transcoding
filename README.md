@@ -18,7 +18,7 @@ The pipeline architecture consists of the following components:
 * FFmpeg: The tool used within Docker containers to transcode videos into multiple resolutions.
 
 # Workflow
-    1. Video Upload: A user uploads a video to an S3 bucket.
+* Video Upload: A user uploads a video to an S3 bucket.
        ![image](https://github.com/user-attachments/assets/a5b89587-49a4-4926-b4f7-ac65d5336c98)
        ![image](https://github.com/user-attachments/assets/2e4a239f-9bb3-4c11-8959-39e042aec1e7)
 
